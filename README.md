@@ -1,6 +1,3 @@
 # Personal Technical Homepage
 
-## Technology stack
-* React 19
-* biome
-* tailwindcss v4
+## Technology stack：React 19 + tailwindcss v4
