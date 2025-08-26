@@ -1,3 +1,3 @@
 # Personal Technical Homepage
 
-## Technology stack：React 19 + tailwindcss v4
+## React 19 + Tailwindcss v4
