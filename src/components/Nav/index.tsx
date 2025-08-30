@@ -28,7 +28,7 @@ const navList: Array<NavCardProps> = [
 
 function Nav() {
 	return (
-		<div className="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 place-items-center gap-5 sm:gap-10">
+		<div className="w-full px-5 grid grid-cols-2 md:grid-cols-4 place-items-center gap-5">
 			{navList.map((item) => (
 				<NavCard key={item.title} {...item} />
 			))}

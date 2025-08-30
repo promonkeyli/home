@@ -32,7 +32,7 @@ const socialList: Array<SocialItem> = [
 
 function Social() {
 	return (
-		<div className="grid grid-cols-4 place-items-center gap-5">
+		<div className="grid grid-cols-4 place-items-center gap-10">
 			{socialList.map(({ name, link, icon }) => (
 				<a
 					key={name}

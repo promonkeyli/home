@@ -10,7 +10,7 @@ export interface NavCardProps {
 
 function NavCard({ icon, title, link }: NavCardProps) {
 	return (
-		<div className="w-full h-[80px] sm:h-[110px] border border-[#e5e5e5] rounded-md sm:rounded-md grid place-content-center cursor-pointer">
+		<div className="w-full h-[100px] border border-[#e5e5e5] rounded-md grid place-content-center cursor-pointer shadow-sm hover:shadow-md duration-75">
 			<a
 				href={link}
 				target="_blank"

@@ -3,7 +3,7 @@
  */
 function Avatar() {
 	return (
-		<div className="flex flex-col items-center gap-5 sm:gap-10">
+		<div className="flex flex-col items-center gap-5">
 			<a
 				className="cursor-pointer inline-block"
 				target="_blank"
