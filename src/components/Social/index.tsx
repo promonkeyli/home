@@ -26,7 +26,7 @@ const socialList: Array<SocialItem> = [
 	{
 		name: "blog",
 		icon: "/images/blog.svg",
-		link: "https://promonkeyli.github.io",
+		link: "https://blog.promonkeyli.top",
 	},
 ];
 
