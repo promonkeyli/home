@@ -16,8 +16,8 @@ const navList: Array<NavCardProps> = [
 	},
 	{
 		icon: "/images/user.svg",
-		link: "",
-		title: "面试总结",
+		link: "https://notes.promonkeyli.top",
+		title: "知识笔记",
 	},
 	{
 		icon: "/images/setting.svg",
