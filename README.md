@@ -1,1 +1,1 @@
-# Personal Technical Homepage
+# Personal Homepage
