@@ -1,3 +1,6 @@
+/**
+ * @description 主题切换组件
+ */
 import { useEffect, useMemo, useState } from "react";
 
 export default function ThemeToggle() {
