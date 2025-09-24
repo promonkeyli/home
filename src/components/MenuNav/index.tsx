@@ -40,7 +40,7 @@ const menuItems = [
 
 function MenuNav() {
 	return (
-		<div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+		<div className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 ">
 			{menuItems.map((item, i) => (
 				<motion.div
 					key={item.label}
@@ -53,7 +53,7 @@ function MenuNav() {
 						href={item.url}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-neutral-200 bg-white/90 p-7 shadow-md backdrop-blur hover:shadow-xl dark:border-neutral-700 dark:bg-neutral-900/80 transition"
+						className="group flex flex-col items-center justify-center gap-3 rounded-xl border border-neutral-200 bg-white/20 p-7 shadow-sm backdrop-blur hover:shadow-md dark:border-neutral-700 dark:bg-neutral-900/80 transition"
 					>
 						<span className="text-3xl opacity-80 group-hover:opacity-100 transition">
 							{item.icon}

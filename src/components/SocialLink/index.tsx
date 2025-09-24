@@ -69,7 +69,7 @@ function SocialLink() {
 				initial={{ y: 10, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
 				transition={{ delay: 0.2, duration: 0.5 }}
-				className="mt-10 text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100"
+				className="mt-4 text-2xl sm:text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100"
 			>
 				Young
 			</motion.h1>

@@ -5,7 +5,7 @@ import ThemeToggle from "@/components/ThemeToggole";
 function App() {
 	return (
 		<div
-			className="min-h-screen min-w-[400px] flex flex-col pb-10
+			className="min-h-screen flex flex-col pb-14
                        bg-gradient-to-b from-neutral-50 via-neutral-100 to-neutral-200
                      dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-800"
 		>
@@ -21,7 +21,7 @@ function App() {
 					<SocialLink />
 
 					{/* 导航菜单区域 */}
-					<div className="mt-6 w-full max-w-3xl">
+					<div className="mt-10 w-full sm:w-2/3 lg:w-1/2">
 						<MenuNav />
 					</div>
 				</section>
