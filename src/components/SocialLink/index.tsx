@@ -75,7 +75,7 @@ function SocialLink() {
 			</motion.h1>
 
 			{/* 社交按钮 */}
-			<div className="mt-10 flex flex-wrap justify-center gap-3">
+			<div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3">
 				{socialLinks.map((item, i) => (
 					<motion.a
 						key={item.label}
