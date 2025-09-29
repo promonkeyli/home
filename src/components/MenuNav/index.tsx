@@ -2,6 +2,7 @@
  * @description 菜单导航组件
  */
 import { motion } from "framer-motion";
+import { Link } from "@tanstack/react-router";
 
 const menuItems = [
 	{
@@ -9,7 +10,7 @@ const menuItems = [
 			<img src="/images/user.svg" alt="User" className="w-7 h-7 dark:invert" />
 		),
 		label: "在线简历",
-		url: "https://notes.promonkeyli.top",
+		url: "/resume",
 	},
 	{
 		icon: (
@@ -49,11 +50,11 @@ function MenuNav() {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ delay: i * 0.05 }}
 				>
-					<a
-						href={item.url}
-						target="_blank"
+					<Link
+						// target="_blank"
 						rel="noopener noreferrer"
 						className="group flex flex-col items-center justify-center gap-3 rounded-xl border border-neutral-200 bg-white/20 p-7 shadow-sm backdrop-blur hover:shadow-md dark:border-neutral-700 dark:bg-neutral-900/80 transition"
+						to={item.url}
 					>
 						<span className="text-3xl opacity-80 group-hover:opacity-100 transition">
 							{item.icon}
@@ -61,7 +62,7 @@ function MenuNav() {
 						<span className="text-lg font-semibold text-neutral-800 dark:text-neutral-100">
 							{item.label}
 						</span>
-					</a>
+					</Link>
 				</motion.div>
 			))}
 		</div>

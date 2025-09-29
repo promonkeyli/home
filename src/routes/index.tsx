@@ -1,8 +1,13 @@
+import { createFileRoute } from "@tanstack/react-router";
 import MenuNav from "@/components/MenuNav";
 import SocialLink from "@/components/SocialLink";
 import ThemeToggle from "@/components/ThemeToggole";
 
-function App() {
+export const Route = createFileRoute("/")({
+	component: RouteComponent,
+});
+
+function RouteComponent() {
 	return (
 		<div
 			className="min-h-screen flex flex-col pb-14
@@ -29,5 +34,3 @@ function App() {
 		</div>
 	);
 }
-
-export default App;
