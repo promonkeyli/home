@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { motion } from "framer-motion";
 import MenuNav from "@/components/MenuNav";
 import SocialLink from "@/components/SocialLink";
-import ThemeToggle from "@/components/ThemeToggole";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export const Route = createFileRoute("/")({
 	component: RouteComponent,
@@ -9,28 +10,48 @@ export const Route = createFileRoute("/")({
 
 function RouteComponent() {
 	return (
-		<div
-			className="min-h-screen flex flex-col pb-14
-                       bg-gradient-to-b from-neutral-50 via-neutral-100 to-neutral-200
-                     dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-800"
-		>
+		<div className="min-h-screen relative flex flex-col overflow-hidden bg-neutral-50 dark:bg-neutral-950 transition-colors duration-300">
+			{/* Background Decorative Elements */}
+			<div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+				<div className="absolute -top-[20%] -left-[10%] w-[70%] h-[70%] rounded-full bg-purple-200/30 dark:bg-purple-900/20 blur-[100px]" />
+				<div className="absolute top-[20%] -right-[10%] w-[60%] h-[60%] rounded-full bg-blue-200/30 dark:bg-blue-900/20 blur-[100px]" />
+				<div className="absolute -bottom-[20%] left-[20%] w-[50%] h-[50%] rounded-full bg-teal-200/30 dark:bg-teal-900/20 blur-[100px]" />
+			</div>
+
 			{/* 顶部：右上角固定主题切换 */}
-			<header className="w-full flex justify-end px-6 pt-4 pb-10">
+			<header className="w-full flex justify-end px-6 pt-6 pb-2 relative z-10">
 				<ThemeToggle />
 			</header>
 
 			{/* 主体内容：居中展示 */}
-			<main className="flex-1 flex flex-col items-center justify-center px-4">
-				<section className="w-full flex flex-col items-center text-center space-y-8 px-2">
+			<main className="flex-1 flex flex-col items-center justify-center px-4 relative z-10 py-10">
+				<motion.div
+					initial="hidden"
+					animate="visible"
+					variants={{
+						hidden: { opacity: 0 },
+						visible: {
+							opacity: 1,
+							transition: {
+								staggerChildren: 0.2, // SocialLink then MenuNav
+							},
+						},
+					}}
+					className="w-full max-w-2xl flex flex-col items-center text-center space-y-10"
+				>
 					{/* 社交链接区域 */}
 					<SocialLink />
 
 					{/* 导航菜单区域 */}
-					<div className="mt-10 w-full sm:w-2/3 lg:w-1/2">
+					<div className="w-full">
 						<MenuNav />
 					</div>
-				</section>
+				</motion.div>
 			</main>
+
+			<footer className="py-6 text-center text-neutral-400 dark:text-neutral-600 text-sm relative z-10">
+				© {new Date().getFullYear()} Young. All rights reserved.
+			</footer>
 		</div>
 	);
 }

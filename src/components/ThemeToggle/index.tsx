@@ -25,7 +25,7 @@ export default function ThemeToggle() {
 		root.classList.toggle("dark", isDark);
 		try {
 			localStorage.setItem("theme", isDark ? "dark" : "light");
-		} catch {}
+		} catch { }
 	}, [isDark]);
 
 	return (
@@ -37,7 +37,7 @@ export default function ThemeToggle() {
 			onClick={() => setIsDark((v) => !v)}
 			className="group inline-flex items-center gap-2 rounded-full border border-neutral-300 dark:border-neutral-700 bg-white/80 dark:bg-neutral-900/70 px-3 py-1.5 text-sm text-neutral-700 dark:text-neutral-200 shadow-sm hover:shadow transition focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/60"
 		>
-			{isDark ? (
+			{!isDark ? (
 				<svg
 					className="h-4 w-4"
 					viewBox="0 0 24 24"
@@ -67,7 +67,7 @@ export default function ThemeToggle() {
 					<path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
 				</svg>
 			)}
-			<span>{isDark ? "深色模式" : "浅色模式"}</span>
+			<span>{!isDark ? "深色模式" : "浅色模式"}</span>
 		</button>
 	);
 }
