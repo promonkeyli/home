@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import MenuNav from "@/components/MenuNav";
 import SocialLink from "@/components/SocialLink";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -7,6 +7,16 @@ import ThemeToggle from "@/components/ThemeToggle";
 export const Route = createFileRoute("/")({
 	component: RouteComponent,
 });
+
+const routeVariants: Variants = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.2, // SocialLink then MenuNav
+		},
+	},
+};
 
 function RouteComponent() {
 	return (
@@ -28,15 +38,7 @@ function RouteComponent() {
 				<motion.div
 					initial="hidden"
 					animate="visible"
-					variants={{
-						hidden: { opacity: 0 },
-						visible: {
-							opacity: 1,
-							transition: {
-								staggerChildren: 0.2, // SocialLink then MenuNav
-							},
-						},
-					}}
+					variants={routeVariants}
 					className="w-full max-w-2xl flex flex-col items-center text-center space-y-10"
 				>
 					{/* 社交链接区域 */}

@@ -1,7 +1,7 @@
 /**
  * @description 菜单导航组件
  */
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 
 const menuItems = [
@@ -47,7 +47,7 @@ const menuItems = [
 	},
 ];
 
-const containerVariants = {
+const containerVariants: Variants = {
 	hidden: { opacity: 0 },
 	visible: {
 		opacity: 1,
@@ -57,7 +57,7 @@ const containerVariants = {
 	},
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
 	hidden: { opacity: 0, y: 20 },
 	visible: {
 		opacity: 1,
@@ -77,7 +77,7 @@ function MenuNav() {
 			variants={containerVariants}
 		// Relying on parent stagger.
 		>
-			{menuItems.map((item, i) => (
+			{menuItems.map((item) => (
 				<motion.div
 					key={item.label}
 					variants={itemVariants}

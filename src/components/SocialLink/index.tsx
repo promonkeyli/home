@@ -1,7 +1,7 @@
 /**
  * @description 社交链接组件
  */
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 const socialLinks = [
 	{
@@ -46,7 +46,7 @@ const socialLinks = [
 	},
 ];
 
-const containerVariants = {
+const containerVariants: Variants = {
 	hidden: { opacity: 0 },
 	visible: {
 		opacity: 1,
@@ -57,7 +57,7 @@ const containerVariants = {
 	},
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
 	hidden: { y: 20, opacity: 0 },
 	visible: {
 		y: 0,
@@ -66,12 +66,25 @@ const itemVariants = {
 	},
 };
 
-const scaleVariants = {
+const scaleVariants: Variants = {
 	hidden: { scale: 0.8, opacity: 0 },
 	visible: {
 		scale: 1,
 		opacity: 1,
 		transition: { duration: 0.5, ease: "easeOut" },
+	},
+};
+
+const socialButtonVariants: Variants = {
+	hidden: { opacity: 0, scale: 0.9 },
+	visible: {
+		opacity: 1,
+		scale: 1,
+		transition: {
+			type: "spring",
+			stiffness: 200,
+			damping: 20,
+		},
 	},
 };
 
@@ -114,7 +127,9 @@ function SocialLink() {
 			<motion.div
 				className="mt-8 flex flex-wrap justify-center gap-4"
 				variants={{
-					visible: { transition: { staggerChildren: 0.05 } },
+					visible: {
+						transition: { staggerChildren: 0.1 } // Slower stagger for elegance
+					},
 				}}
 			>
 				{socialLinks.map((item) => (
@@ -123,11 +138,12 @@ function SocialLink() {
 						href={item.url}
 						target="_blank"
 						rel="noopener noreferrer"
-						variants={itemVariants}
+						variants={socialButtonVariants}
 						className="group flex items-center gap-2 px-5 py-2.5 rounded-full border border-neutral-200/60 dark:border-neutral-700/60 bg-white/50 dark:bg-neutral-800/50 backdrop-blur-sm shadow-sm hover:shadow-md hover:bg-white dark:hover:bg-neutral-800 transition-all duration-300"
 						whileHover={{
 							y: -2,
-							scale: 1.02,
+							scale: 1.05,
+							transition: { duration: 0.2 }
 						}}
 						whileTap={{ scale: 0.95 }}
 					>
